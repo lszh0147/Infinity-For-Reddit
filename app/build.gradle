@@ -15,10 +15,19 @@ android {
             }
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("TestKey.jks")
+            storePassword "123321"
+            keyAlias "Test"
+            keyPassword "123321"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         minifiedRelease {
             initWith buildTypes.release
@@ -26,6 +35,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -160,10 +170,10 @@ dependencies {
     implementation 'me.zhanghai.android.fastscroll:library:1.1.5'
 
     // Crash screen
-    implementation 'com.melegy.redscreenofdeath:red-screen-of-death:0.1.2'
+//    implementation 'com.melegy.redscreenofdeath:red-screen-of-death:0.1.2'
 
 
 /**** Builds and flavors ****/
     // debugImplementation because LeakCanary should only run in debug builds.
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.5'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.5'
 }
