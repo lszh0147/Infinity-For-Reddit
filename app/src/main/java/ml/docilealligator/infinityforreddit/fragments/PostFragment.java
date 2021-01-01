@@ -737,7 +737,7 @@ public class PostFragment extends Fragment implements FragmentCommunicator {
                                 new Handler(), null, usage, nameOfUsage, (postFilter, readPostList) -> {
                                     if (activity != null && !activity.isFinishing() && !activity.isDestroyed()) {
                                         this.postFilter = postFilter;
-                                        postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, false);
+                                        postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, true);
                                         initializeAndBindPostViewModel(accessToken);
                                     }
                                 });
@@ -750,7 +750,7 @@ public class PostFragment extends Fragment implements FragmentCommunicator {
                                 if (activity != null && !activity.isFinishing() && !activity.isDestroyed()) {
                                     if (this.postFilter == null) {
                                         this.postFilter = postFilter;
-                                        postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, false);
+                                        postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, true);
                                     }
                                     this.readPosts = readPostList;
                                     initializeAndBindPostViewModel(accessToken);
@@ -763,7 +763,7 @@ public class PostFragment extends Fragment implements FragmentCommunicator {
                             new Handler(), null, usage, nameOfUsage, (postFilter, readPostList) -> {
                                 if (activity != null && !activity.isFinishing() && !activity.isDestroyed()) {
                                     this.postFilter = postFilter;
-                                    postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, false);
+                                    postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, true);
                                     initializeAndBindPostViewModel(accessToken);
                                 }
                             });
@@ -777,7 +777,7 @@ public class PostFragment extends Fragment implements FragmentCommunicator {
                         new Handler(), null, usage, nameOfUsage, (postFilter, readPostList) -> {
                             if (activity != null && !activity.isFinishing() && !activity.isDestroyed()) {
                                 this.postFilter = postFilter;
-                                postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, false);
+                                postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, true);
                                 initializeAndBindPostViewModelForAnonymous(accessToken);
                             }
                         });
@@ -1250,7 +1250,7 @@ public class PostFragment extends Fragment implements FragmentCommunicator {
     @Override
     public void changePostFilter(PostFilter postFilter) {
         this.postFilter = postFilter;
-        postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, false);
+        postFilter.allowNSFW = mNsfwAndSpoilerSharedPreferences.getBoolean((accountName == null ? "" : accountName) + SharedPreferencesUtils.NSFW_BASE, true);
         if (mPostViewModel != null) {
             mPostViewModel.changePostFilter(postFilter);
         }

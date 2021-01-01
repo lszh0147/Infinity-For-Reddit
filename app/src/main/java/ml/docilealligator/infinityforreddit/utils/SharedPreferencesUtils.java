@@ -71,7 +71,7 @@ public class SharedPreferencesUtils {
     public static final String PULL_NOTIFICATION_TIME = "pull_notification_time";
     public static final String SHOW_ELAPSED_TIME_KEY = "show_elapsed_time";
     public static final String TIME_FORMAT_KEY = "time_format";
-    public static final String TIME_FORMAT_DEFAULT_VALUE = "MMM d, yyyy, HH:mm";
+    public static final String TIME_FORMAT_DEFAULT_VALUE = "yyyy-M-d HH:mm";
     public static final String DEFAULT_POST_LAYOUT_KEY = "default_post_layout";
     public static final String SHOW_DIVIDER_IN_COMPACT_LAYOUT = "show_divider_in_compact_layout";
     public static final String SHOW_THUMBNAIL_ON_THE_LEFT_IN_COMPACT_LAYOUT = "show_thumbnail_on_the_left_in_compact_layout";
